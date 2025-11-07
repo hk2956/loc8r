@@ -78,7 +78,7 @@ const renderHomepage = function(req, res, responseBody) {
   }
   res.render('locations-list', 
     {
-    title: 'TEST-SUCCESS-Loc8r - find a place to work with wifi',
+    title: 'Loc8r - find a place to work with wifi',
     pageHeader: {
       title: 'Loc8r',
       strapline: 'Find places to work with wifi near you!'
