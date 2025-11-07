@@ -22,6 +22,7 @@ const locationsReadOne = async (req, res) => {
 const locationsListByDistance = async (req, res) => {
   const lng = parseFloat(req.query.lng);
   const lat = parseFloat(req.query.lat);
+  const maxDistance = parseFloat(req.query.maxDistance) || 20000.0;
   const near = {
     type: "Point",
     coordinates: [lng, lat]
@@ -30,7 +31,7 @@ const locationsListByDistance = async (req, res) => {
     distanceField: "distance.calculated",
     key: 'coords',
     spherical: true,
-    maxDistance: 200000,
+    maxDistance: maxDistance,
   };
   if (!lng || !lat) {
     return res
